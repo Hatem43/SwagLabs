@@ -26,7 +26,7 @@ public class Main {
             driver = new ChromeDriver();
             driver.get("https://www.saucedemo.com/");
         }
-        /*
+       
         @Test(priority = 0)
           public void loginwithvalidusernameandpassword(){
             driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -75,8 +75,7 @@ public class Main {
         Assert.assertEquals(expected,actual);
 
     }
-         */
-    /*
+     
     @Test
     public void productpricesortlowtohigh(){
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -95,9 +94,7 @@ public class Main {
         Collections.sort(beforesortpriceList);
         Assert.assertEquals(beforesortpriceList,aftersortpriceList);
     }
-     */
-
-    /*
+     
     @Test
     public void productpricesorthightolow(){
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -117,9 +114,7 @@ public class Main {
         Assert.assertEquals(beforesortpriceList,aftersortpriceList);
 
     }
-     */
-
-    /*
+     
 
     @Test
     public void productsortfromZtoA(){
@@ -140,9 +135,7 @@ public class Main {
         Collections.sort(beforesortList);
         Assert.assertEquals(beforesortList,aftersortList);
     }
-     */
-
-    /*
+     
     @Test
     public void addtocart(){
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -157,9 +150,7 @@ public class Main {
         String expected="Sauce Labs Backpack";
         Assert.assertEquals(actual,expected);
     }
-     */
-
-    /*
+    
      @Test
     public void removefromcart(){
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -173,9 +164,7 @@ public class Main {
         boolean expected=true;
         Assert.assertEquals(cart,expected);
     }
-     */
-
-/*
+    
     @Test
     public void Logout(){
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -188,5 +177,5 @@ public class Main {
         Assert.assertEquals(expected_url,acual_url);
 
     }
-*/
+
     }
