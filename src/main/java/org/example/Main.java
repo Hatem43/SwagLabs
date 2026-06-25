@@ -153,7 +153,7 @@ public class Main {
     aftersortList.add(Double.parseDouble(price.getText().replace("$", "")));
 }
 
-        Collections.sort(beforesortList);
+        Collections.sort(beforesortList,Collections.reverseOrder());
         Assert.assertEquals(beforesortList,aftersortList);
     }
      
