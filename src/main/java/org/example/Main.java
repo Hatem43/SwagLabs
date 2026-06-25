@@ -84,13 +84,20 @@ public class Main {
 
         List<WebElement> beforesortprice=driver.findElements(By.className(".inventory_item_price"));
         List<Double> beforesortpriceList=new ArrayList<>();
+        for (WebElement price : beforesortprice) {
+        beforesortpriceList.add(Double.parseDouble(price.getText().replace("$", "")));
+}
 
 
-        Select drpdown=new Select(driver.findElement(By.className("product_sort_container")));
+        Select drpdown=new Select(driver.findElement(By.className(".product_sort_container")));
         drpdown.selectByVisibleText("Price (low to high)");
 
         List<WebElement> aftersortprice=driver.findElements(By.className(".inventory_item_price"));
         List<Double> aftersortpriceList=new ArrayList<>();
+        for (WebElement price : aftersortprice) {
+        aftersortpriceList.add(Double.parseDouble(price.getText().replace("$", "")));
+}
+        
         Collections.sort(beforesortpriceList);
         Assert.assertEquals(beforesortpriceList,aftersortpriceList);
     }
@@ -103,16 +110,23 @@ public class Main {
 
         List<WebElement> beforesortprice=driver.findElements(By.className(".inventory_item_price"));
         List<Double> beforesortpriceList=new ArrayList<>();
+        
+        for(WebElement price : beforesortprice) {
+    beforesortpriceList.add(Double.parseDouble(price.getText().replace("$", "")));
+}
 
-        Select drpdown=new Select(driver.findElement(By.className("product_sort_container")));
+        Select drpdown=new Select(driver.findElement(By.className(".product_sort_container")));
         drpdown.selectByVisibleText("Price (high to low)");
 
         List<WebElement> aftersortprice=driver.findElements(By.className(".inventory_item_price"));
         List<Double> aftersortpriceList=new ArrayList<>();
 
-        Collections.sort(beforesortpriceList);
-        Assert.assertEquals(beforesortpriceList,aftersortpriceList);
+        for(WebElement price : aftersortprice) {
+    aftersortpriceList.add(Double.parseDouble(price.getText().replace("$", "")));
+}
 
+       Collections.sort(beforesortpriceList, Collections.reverseOrder());
+        Assert.assertEquals(beforesortpriceList,aftersortpriceList);
     }
      
 
@@ -123,14 +137,21 @@ public class Main {
         driver.findElement(By.id("login-button")).click();
 
         List<WebElement> beforesort=driver.findElements(By.className(".inventory_item_price"));
-        List<String> beforesortList=new ArrayList<>();
+        List<Double> beforesortList=new ArrayList<>();
+        
+                for(WebElement price : beforesort) {
+    beforesortList.add(Double.parseDouble(price.getText().replace("$", "")));
+}
 
-
-        Select sortZtoA=new Select(driver.findElement(By.className("product_sort_container")));
+        Select sortZtoA=new Select(driver.findElement(By.className(".product_sort_container")));
         sortZtoA.selectByVisibleText("Name (Z to A)");
 
         List<WebElement> aftersort=driver.findElements(By.className(".inventory_item_price"));
-        List<String> aftersortList=new ArrayList<>();
+        List<Double> aftersortList=new ArrayList<>();
+        
+        for(WebElement price : aftersort) {
+    aftersortList.add(Double.parseDouble(price.getText().replace("$", "")));
+}
 
         Collections.sort(beforesortList);
         Assert.assertEquals(beforesortList,aftersortList);
