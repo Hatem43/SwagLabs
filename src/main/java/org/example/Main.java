@@ -89,10 +89,10 @@ public class Main {
 }
 
 
-        Select drpdown=new Select(driver.findElement(By.className(".product_sort_container")));
+        Select drpdown=new Select(driver.findElement(By.className("product_sort_container")));
         drpdown.selectByVisibleText("Price (low to high)");
 
-        List<WebElement> aftersortprice=driver.findElements(By.className(".inventory_item_price"));
+        List<WebElement> aftersortprice=driver.findElements(By.className("inventory_item_price"));
         List<Double> aftersortpriceList=new ArrayList<>();
         for (WebElement price : aftersortprice) {
         aftersortpriceList.add(Double.parseDouble(price.getText().replace("$", "")));
@@ -108,17 +108,17 @@ public class Main {
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
 
-        List<WebElement> beforesortprice=driver.findElements(By.className(".inventory_item_price"));
+        List<WebElement> beforesortprice=driver.findElements(By.className("inventory_item_price"));
         List<Double> beforesortpriceList=new ArrayList<>();
         
         for(WebElement price : beforesortprice) {
     beforesortpriceList.add(Double.parseDouble(price.getText().replace("$", "")));
 }
 
-        Select drpdown=new Select(driver.findElement(By.className(".product_sort_container")));
+        Select drpdown=new Select(driver.findElement(By.className("product_sort_container")));
         drpdown.selectByVisibleText("Price (high to low)");
 
-        List<WebElement> aftersortprice=driver.findElements(By.className(".inventory_item_price"));
+        List<WebElement> aftersortprice=driver.findElements(By.className("inventory_item_price"));
         List<Double> aftersortpriceList=new ArrayList<>();
 
         for(WebElement price : aftersortprice) {
@@ -136,17 +136,17 @@ public class Main {
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
 
-        List<WebElement> beforesort=driver.findElements(By.className(".inventory_item_price"));
+        List<WebElement> beforesort=driver.findElements(By.className("inventory_item_price"));
         List<Double> beforesortList=new ArrayList<>();
         
                 for(WebElement price : beforesort) {
     beforesortList.add(Double.parseDouble(price.getText().replace("$", "")));
 }
 
-        Select sortZtoA=new Select(driver.findElement(By.className(".product_sort_container")));
+        Select sortZtoA=new Select(driver.findElement(By.className("product_sort_container")));
         sortZtoA.selectByVisibleText("Name (Z to A)");
 
-        List<WebElement> aftersort=driver.findElements(By.className(".inventory_item_price"));
+        List<WebElement> aftersort=driver.findElements(By.className("inventory_item_price"));
         List<Double> aftersortList=new ArrayList<>();
         
         for(WebElement price : aftersort) {
