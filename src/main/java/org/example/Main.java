@@ -136,25 +136,24 @@ public class Main {
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
 
-        List<WebElement> beforesort=driver.findElements(By.className("inventory_item_price"));
-        List<Double> beforesortList=new ArrayList<>();
-        
-                for(WebElement price : beforesort) {
-    beforesortList.add(Double.parseDouble(price.getText().replace("$", "")));
+        List<WebElement> beforesort = driver.findElements(By.className("inventory_item_name"));
+        List<String> beforesortList = new ArrayList<>();
+
+     for(WebElement product : beforesort) {
+     beforesortList.add(product.getText());
 }
 
-        Select sortZtoA=new Select(driver.findElement(By.className("product_sort_container")));
-        sortZtoA.selectByVisibleText("Name (Z to A)");
+sortZtoA.selectByVisibleText("Name (Z to A)");
 
-        List<WebElement> aftersort=driver.findElements(By.className("inventory_item_price"));
-        List<Double> aftersortList=new ArrayList<>();
-        
-        for(WebElement price : aftersort) {
-    aftersortList.add(Double.parseDouble(price.getText().replace("$", "")));
+List<WebElement> aftersort = driver.findElements(By.className("inventory_item_name"));
+List<String> aftersortList = new ArrayList<>();
+
+    for(WebElement product : aftersort) {
+    aftersortList.add(product.getText());
 }
 
-        Collections.sort(beforesortList,Collections.reverseOrder());
-        Assert.assertEquals(beforesortList,aftersortList);
+Collections.sort(beforesortList, Collections.reverseOrder());
+Assert.assertEquals(beforesortList, aftersortList);
     }
      
     @Test
