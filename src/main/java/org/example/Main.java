@@ -144,8 +144,8 @@ public class Main {
      beforesortList.add(product.getText());
 }
 
-Select sortAtoz = new Select(driver.findElement(sort));
-        sortAtoz.selectByVisibleText("Name (Z to A)");
+Select sortZtoA = new Select(driver.findElement(sort));
+        sortZtoA.selectByVisibleText("Name (Z to A)");
 
 List<WebElement> aftersort = driver.findElements(By.className("inventory_item_name"));
 List<String> aftersortList = new ArrayList<>();
