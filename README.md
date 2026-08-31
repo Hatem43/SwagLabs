@@ -1,1 +1,1 @@
-Automation testing using Selenium for Swag labs site
+Automation testing for Swag labs site using Selenium 
